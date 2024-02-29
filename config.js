@@ -1,9 +1,9 @@
 module.exports = {
-  TOKEN: "",
-  ownerID: ["1004206704994566164", ""],
+  TOKEN: "MTIxMjQwOTY1NTc4Mzg1ODE5OA.GMIVHk.EMO2t4nRm-wqiogBDwE8d6tsMIxNAxA5A4ihqs",
+  ownerID: ["644516576804077588", ""],
   botInvite: "",
   supportServer: "",
-  mongodbURL: "mongodb+srv://shiva:shiva@musicbotyt.ouljywv.mongodb.net/?retryWrites=true&w=majority",
+  mongodbURL: "mongodb+srv://Hiroshi:<password>@musicbot.3b0aiwe.mongodb.net/?retryWrites=true&w=majority&appName=MusicBot",
   status: 'RTXX GG',
   commandsDir: './commands',
   language: "en",
