@@ -17,7 +17,7 @@ const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('
 const db = require("../mongoDB");
 module.exports = {
   name: "queue",
-  description: "It shows you the queue list.",
+  description: "ดูคิวทั้งหมด",
   permissions: "0x0000000000000800",
   options: [],
   run: async (client, interaction) => {
@@ -25,8 +25,8 @@ module.exports = {
     try {
 
      const queue = client.player.getQueue(interaction.guild.id);
-      if (!queue || !queue.playing) return interaction.reply({ content: '⚠️ No music playing!!', ephemeral: true }).catch(e => { })
-      if (!queue.songs[0]) return interaction.reply({ content: '⚠️ Queue is empty!!', ephemeral: true }).catch(e => { })
+      if (!queue || !queue.playing) return interaction.reply({ content: '⚠️ ไม่มีเพลงที่กำลังเล่น!', ephemeral: true }).catch(e => { })
+      if (!queue.songs[0]) return interaction.reply({ content: '⚠️ ไม่มีคิว!', ephemeral: true }).catch(e => { })
 
       const trackl = []
       queue.songs.map(async (track, i) => {

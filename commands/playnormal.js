@@ -2,17 +2,17 @@ const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 const db = require("../mongoDB");
 module.exports = {
   name: "playsong",
-  description: "Play a track.",
+  description: "เล่นเพลง",
   permissions: "0x0000000000000800",
   options: [
     {
       name: "normal",
-      description: "Open music from other platforms.",
+      description: "เปิดเพลงจากแพลตฟอร์มอื่น",
       type: ApplicationCommandOptionType.Subcommand,
       options: [
         {
           name: "name",
-          description: "Write your music name.",
+          description: "เขียนชื่อเพลงของคุณ",
           type: ApplicationCommandOptionType.String,
           required: true
         }
@@ -20,12 +20,12 @@ module.exports = {
     },
     {
       name: "playlist",
-      description: "Write your playlist name.",
+      description: "เขียนชื่อเพลย์ลิสต์ของคุณ",
       type: ApplicationCommandOptionType.Subcommand,
       options: [
         {
           name: "name",
-          description: "Write the name of the playlist you want to create.",
+          description: "เขียนชื่อเพลย์ลิสต์ที่คุณต้องการสร้าง",
           type: ApplicationCommandOptionType.String,
           required: true
         }
@@ -83,7 +83,7 @@ module.exports = {
                   interaction
                 })
               } catch (e) {
-                await interaction.editReply({ content: `❌ No results found!!`, ephemeral: true }).catch(e => { })
+                await interaction.editReply({ content: `❌ ไม่พบผลลัพธ์!`, ephemeral: true }).catch(e => { })
               }
 
               playlist[i]?.playlist?.filter(p => p.name === playlistw).map(async p => {
@@ -121,7 +121,7 @@ module.exports = {
       if (stp === "normal") {
   const name = interaction.options.getString('name');
   if (!name) {
-    return interaction.reply({ content: '▶️ Give Text or link', ephemeral: true }).catch(e => {});
+    return interaction.reply({ content: '▶️ ใส่ชื่อเพลงหรือลิ้งเพลง', ephemeral: true }).catch(e => {});
   }
 
   const embed = new EmbedBuilder()
@@ -141,7 +141,7 @@ module.exports = {
     const errorEmbed = new EmbedBuilder()
       .setColor('#e74c3c')
       .setColor('#FF0000')
-      .setDescription('❌ No results found!!');
+      .setDescription('❌ ไม่พบผลลัพธ์!');
 
     await interaction.editReply({ embeds: [errorEmbed], ephemeral: true }).catch(e => {});
   }
