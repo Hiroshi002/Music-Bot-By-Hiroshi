@@ -91,11 +91,11 @@ fs.readdir(config.commandsDir, (err, files) => {
 
 if (config.TOKEN || process.env.TOKEN) {
   client.login(config.TOKEN || process.env.TOKEN).catch((e) => {
-    console.log('TOKEN ERROR❌❌');
+    console.log('ผิดผลาดในการตรวจสอบ TOKEN❌❌');
   });
 } else {
   setTimeout(() => {
-    console.log('TOKEN ERROR❌❌');
+    console.log('ผิดผลาดในการตรวจสอบ TOKEN❌❌');
   }, 2000);
 }
 
@@ -106,11 +106,11 @@ if(config.mongodbURL || process.env.MONGO){
   useNewUrlParser: true,
   useUnifiedTopology: true,
   }).then(async () => {
-    console.log('\x1b[32m%s\x1b[0m', `|    🍔 Connected MongoDB!`)
+    console.log('\x1b[32m%s\x1b[0m', `|    🍔 เชื่อต่อกับ MongoDB แล้ว!`)
   }).catch((err) => {
-    console.log('\x1b[32m%s\x1b[0m', `|    🍔 Failed to connect MongoDB!`)})
+    console.log('\x1b[32m%s\x1b[0m', `|    🍔 ไม่สามารถเชื่อมต่อ MongoDB! ได้`)})
   } else {
-  console.log('\x1b[32m%s\x1b[0m', `|    🍔 Error MongoDB!`)
+  console.log('\x1b[32m%s\x1b[0m', `|    🍔 ผิดผลาดในการตวรจสอบ MongoDB!`)
   }
 
 
@@ -123,7 +123,7 @@ app.get('/', (req, res) => {
 });
 app.listen(port, () => {
   console.log(`🔗 Listening to RTX: http://localhost:${port}`);
-  console.log(`✨ Happy New Year Welcome To 2024`);
+  console.log(`✨ ขอให้เป็นปีที่ดีใน 2567`);
 });
 printWatermark();
 

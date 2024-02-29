@@ -4,9 +4,9 @@ module.exports = {
   botInvite: "",
   supportServer: "",
     mongodbURL: "mongodb+srv://shiva:shiva@musicbotyt.ouljywv.mongodb.net/?retryWrites=true&w=majority",
-  status: 'RTXX GG',
+  status: 'ใช้งานได้ปกติ',
   commandsDir: './commands',
-  language: "en",
+  language: "th",
   embedColor: "00fbff",
   errorLog: "",
 
