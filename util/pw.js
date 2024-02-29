@@ -1,6 +1,6 @@
 const status = "AUTOMATIC";
 const botName = "🎸 Music Bot ";
-const rtxText = "RTX";
+const rtxText = "Hiroshi";
 const version = "Latest@ v3.5"; 
 const startTime = Date.now();
 
