@@ -67,12 +67,12 @@ module.exports = {
       const generateEmbed = async (start) => {
         let sayı = page === 1 ? 1 : page * kaçtane - kaçtane + 1
         const current = trackl.slice(start, start + kaçtane)
-        if (!current || !current?.length > 0) return interaction.reply({ content: '⚠️ Queue is empty!!', ephemeral: true }).catch(e => { })
+        if (!current || !current?.length > 0) return interaction.reply({ content: '⚠️ ไม่มีเพลงที่กำลังเล่น!', ephemeral: true }).catch(e => { })
         return new EmbedBuilder()
           .setTitle(`${interaction.guild.name}  Queue`)
           .setThumbnail(interaction.guild.iconURL({ size: 2048, dynamic: true }))
           .setColor(client.config.embedColor)
-          .setDescription(`▶️ Now plawying: \`${queue.songs[0].name}\`
+          .setDescription(`▶️ กำลังเล่น: \`${queue.songs[0].name}\`
     ${current.map(data =>
             `\n\`${sayı++}\` | [${data.title}](${data.url}) | (Executed by <@${data.user.id}>)`
           )}`)
@@ -96,7 +96,7 @@ module.exports = {
         collector.on("collect", async (button) => {
           if (button?.customId === "close") {
             collector?.stop()
-           return button?.reply({ content: 'Command Cancelled', ephemeral: true }).catch(e => { })
+           return button?.reply({ content: 'ยกเลิกคำสั่ง', ephemeral: true }).catch(e => { })
           } else {
 
             if (button.customId === backId) {

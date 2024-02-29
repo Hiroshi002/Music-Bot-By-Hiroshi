@@ -4,11 +4,11 @@ const db = require("../mongoDB");
 
 module.exports = {
   name: "volume",
-  description: "Allows you to adjust the music volume.",
+  description: "ปรับเสียงเพลง",
   permissions: "0x0000000000000800",
   options: [{
     name: 'volume',
-    description: 'Type the number to adjust the volume.',
+    description: 'เลือกระดับเสียง',
     type: ApplicationCommandOptionType.Integer,
     required: true
   }],
@@ -17,7 +17,7 @@ module.exports = {
     try {
       const queue = client.player.getQueue(interaction.guild.id);
       if (!queue || !queue.playing) {
-        return interaction.reply({ content: '⚠️ No music playing!!', ephemeral: true });
+        return interaction.reply({ content: '⚠️ ไม่มีเพลงที่กำลังเล่นที่!', ephemeral: true });
       }
 
       const vol = parseInt(interaction.options.getInteger('volume'));
@@ -54,7 +54,7 @@ module.exports = {
 
         return interaction.reply({ embeds: [embed] });
       } else {
-        return interaction.reply({ content: '❌ Something went wrong while changing the volume.', ephemeral: true });
+        return interaction.reply({ content: '❌ ปรับเสียงไม่ได้', ephemeral: true });
       }
     } catch (e) {
       console.error(e);

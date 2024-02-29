@@ -3,7 +3,7 @@ const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
   name: "resume",
-  description: "Start paused music.",
+  description: "เล่นเพลงต่อ",
   permissions: "0x0000000000000800",
   options: [],
   voiceChannel: true,
@@ -12,11 +12,11 @@ module.exports = {
 
     try {
       if (!queue) {
-        return interaction.reply({ content: '⚠️ Queue is empty!!', ephemeral: true });
+        return interaction.reply({ content: '⚠️ ไม่มมีคิว!', ephemeral: true });
       }
 
       if (!queue.paused) {
-        return interaction.reply({ content: '⚠️ No paused music!!', ephemeral: true });
+        return interaction.reply({ content: '⚠️ ไม่มีเพลงที่หยุด!', ephemeral: true });
       }
 
       const success = queue.resume();
