@@ -7,14 +7,14 @@ module.exports = async (client, queue, song) => {
     if (queue?.textChannel) {
       const embed = new EmbedBuilder()
       .setAuthor({
-        name: 'กำลังเล่นเพลง',
+        name: 'Currently playing a Track',
         iconURL: 'https://cdn.discordapp.com/attachments/1140841446228897932/1144671132948103208/giphy.gif', 
-        url: ''
+        url: 'https://discord.gg/FUEHs7RCqz'
     })
-    .setDescription(`\n ‎ \n▶️ **ลายละเอียด :** **${song?.name}**\n▶️ **ขอให้สนุกกับการฟังเพลงที่ดี. ** \n▶️ **If link breaks playback try to give query.**`)
+    .setDescription(`\n ‎ \n▶️ **Details :** **${song?.name}**\n▶️ **Enjoy the Ultimate Music Experience. ** \n▶️ **If link breaks playback try to give query.**`)
 .setImage(queue.songs[0].thumbnail)
     .setColor('#FF0000')
-    .setFooter({ text: 'ลายละเอียดอื่นๆ - ใช้ /help ดูคำสั่งได้' });
+    .setFooter({ text: 'More info - Use /help command [RTX GAMING]' });
      
       queue?.textChannel?.send({ embeds: [embed] }).catch(e => { });
     }
