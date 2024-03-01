@@ -19,7 +19,7 @@ console.log('\x1b[36m%s\x1b[0m', '|    🚀 ไม่สามารถทำก
 }
 })();
 
-console.log('\x1b[32m%s\x1b[0m', `|    🌼 เข้าสู่ระบบ ${client.user.username}`);
+console.log('\x1b[32m%s\x1b[0m', `|    🌼 เข้าสู่ระบบ ${client.user.username} แล้ว`);
 
 setInterval(() => client.user.setActivity({ 
   name: `Update v3.5`, 

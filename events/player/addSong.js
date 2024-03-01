@@ -13,7 +13,7 @@ module.exports = async (client, queue, song) => {
     })
         .setDescription(`<@${song.user.id}>, **${song.name}**`)
         .setColor('#14bdff')
-        .setFooter({ text: 'ใช้ /queue ' });
+        .setFooter({ text: 'ใช้ /queue เพื่อดูคิวเพลง' });
       queue?.textChannel?.send({ embeds: [embed] }).catch(e => { });
     }
   }

@@ -3,7 +3,7 @@ const config = require("../config.js");
 const db = require("../mongoDB");
 module.exports = {
   name: "shuffle",
-  description: "Shuffle the queue songs",
+  description: "เพลงก่อนหน้า",
   options: [],
   permissions: "0x0000000000000800",
   run: async (client, interaction) => {

@@ -21,7 +21,7 @@ module.exports = async (client, interaction) => {
 
 try {
 if (!interaction?.guild){
-return interaction?.reply({ content: "Rate Limited.", ephemeral: true })
+return interaction?.reply({ content: "เกินจำนวน.", ephemeral: true })
 } else {
 
     function cmd_loader() {
@@ -55,7 +55,7 @@ return interaction?.reply({ content: "Rate Limited.", ephemeral: true })
 
             if (!channel_filter?.length > 0 && !interaction?.member?.permissions?.has("0x0000000000000020")) {
             channel_filter = data?.channels?.map(x => `<#${x.channel}>`).join(", ")
-            return interaction?.reply({ content: '🔴 Rate Limited'.replace("{channel_filter}", channel_filter), ephemeral: true }).catch(e => { })
+            return interaction?.reply({ content: '🔴 เกินจำนวน'.replace("{channel_filter}", channel_filter), ephemeral: true }).catch(e => { })
             }
         }
             }

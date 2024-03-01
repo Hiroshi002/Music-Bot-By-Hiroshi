@@ -17,7 +17,7 @@ const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 const db = require("../mongoDB");
 module.exports = {
   name: "skip",
-  description: "ข้ามไปเพลงต่อไป",
+  description: "ข้ามเพลง",
   permissions: "0x0000000000000800",
   options: [{
     name: "number",
